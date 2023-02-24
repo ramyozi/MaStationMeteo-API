@@ -1,0 +1,45 @@
+﻿[Arrow]
+Path=Jotaro Normal.ani
+
+[Help]
+Path=Jotaro Help.ani
+
+[AppStarting]
+Path=Jotaro Working.ani
+
+[Wait]
+Path=Jotaro Busy.ani
+
+[Crosshair]
+Path=Jotaro Precision.cur
+
+[IBeam]
+Path=Jotaro Text.cur
+
+[NWPen]
+Path=Jotaro Handwriting.cur
+
+[No]
+Path=Jotaro Unavaible.cur
+
+[SizeNS]
+Path=Jotaro Vertical.ani
+
+[SizeWE]
+Path=Jotaro Horizontal.ani
+
+[SizeNWSE]
+Path=Jotaro Diagonal 1.cur
+
+[SizeNESW]
+Path=Jotaro Diagonal 2.cur
+
+[SizeAll]
+Path=Jotaro Move.ani
+
+[UpArrow]
+Path=Jotaro Alternate.cur
+
+[Hand]
+Path=Jotaro Link.ani
+
