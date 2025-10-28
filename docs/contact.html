@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/main_c.css" />
+
+  <link rel="icon" href="../needs/sun1.png" type="image/x-icon" />
+  <title>Formulaire de contact</title>
+</head>
+
+<body>
+  <header id="page_principale">
+    <h1 style="text-align: center">
+      <img id="logoA" src="../needs/titre.svg" alt="soleil" />
+    </h1>
+  </header>
+  <main id="pcontact">
+    <section id="scontact">
+      <h2>Contactez Moi</h2>
+      <form id="contact">
+        <figure></figure>
+        <p>Vous souhaitez une r&eacute;ponse ? Donnez votre courriel !</p>
+        <fieldset id="Personnal-information">
+
+          <div class="Entry" data-error-msg="Ce champs doit faire au moins 2 caractères">
+            <label for="c_name" class="firstCol">Nom </label>
+            <input type="text" name="c-name" id="c_name" placeholder="votre nom et prénom" required />
+          </div>
+          <div class="Entry" data-error-msg="Ce champs doit être saisie sous la forme xxxx@xxx.xxx">
+            <label for="c_email" class="firstCol">E-mail </label>
+            <input type="email" name="c-email" id="c_email" placeholder="votre adresse mail" required />
+          </div>
+          <div id="SaisieObjet" class="Entry" data-error-msg="Ce champs doit faire au moins 4 caractères">
+            <label for="c_objet" class="firstCol">Objet</label>
+            <input type="text" name="objet" id="c_objet" placeholder="objet" required />
+
+          </div>
+          <div id="SaisieMessage" class="Entry" data-error-msg="Ce champs doit faire au moins 10 caractères">
+            <label for="c_message" class="firstCol">Votre message</label>
+            <textarea name="message" id="c_message" cols="80" rows="10" placeholder="Votre message" required></textarea>
+
+          </div>
+        </fieldset>
+        <fieldset id="validation">
+          <button type="submit">Envoyer</button>
+          <button type="reset">Annuler</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <ul id="pied_page">
+      <li>
+        <p>&copy;Ramzi</p>
+      </li>
+      <li>
+        <p>&Ccedil;a vous plaît ? C'est Ramzi qui l'a fait !</p>
+      </li>
+      <li>
+        <p>Voir <a id="lien_meteo" href="index.html">la page de M&eacute;t&eacute;o </a></p>
+      </li>
+    </ul>
+  </footer>
+  <script src="../js/contact.js"></script>
+</body>
+
+</html>
