@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="ramzi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../needs/sun1.png" type="image/x-icon">
+    <title>Acceil Météo</title>
+</head>
+
+<body>
+    <header id="page_principale">
+        <img id="logoA" src="../needs/titre.svg" alt="soleil_météo">
+    </header>
+    <main>
+        <section id="ephemeride" class="bloc">
+            <h2>&Eacute;phérméride</h2>
+            <p id="date"></p>
+            <p id="heure"></p>
+            <p>Le soleil se lève à <span id="lever"></span></p>
+            <p>Et se couche à <span id="coucher"></span></p>
+            <p> Aujourd'hui nous fêtons le <span id="St"></span></p>
+        </section>
+        <section id="temperature" class="bloc">
+            <h2>Temperature</h2>
+            <figure>
+                <div class="circle nombre" id="min" style="background-color:
+ #44E5C5;">
+                    <p class="temp"></p>
+                </div>
+                <figcaption>Min</figcaption>
+            </figure>
+            <figure>
+                <div class="circle nombre" id="moy" style="background-color:
+ #33DD22;">
+                    <p class="temp"></p>
+                </div>
+                <figcaption>Moy</figcaption>
+            </figure>
+            <figure>
+                <div class="circle nombre" id="max" style="background-color:
+ #E56144;">
+                    <p class="temp"></p>
+                </div>
+                <figcaption>Max</figcaption>
+            </figure>
+
+        </section>
+        <section id="tableau" class="bloc">
+            <table>
+                <tr>
+                    <th id="jour0"></th>
+                    <td><img src="#" alt="img_jour0" id="img_jour0"></td>
+                    <td id="meteo_jour0"></td>
+                </tr>
+                <tr>
+                    <th id="jour1"></th>
+                    <td><img src="#" alt="img_jour1" id="img_jour1"></td>
+                    <td id="meteo_jour1">&Eacute;</td>
+                </tr>
+                <tr>
+                    <th id="jour2"></th>
+                    <td><img src="#" alt="img_jour2" id="img_jour2"></td>
+                    <td id="meteo_jour2"></td>
+                </tr>
+            </table>
+        </section>
+        <br>
+    </main>
+    <footer>
+        <ul id="pied_page">
+            <li>
+                <p>&COPY;Ramzi</p>
+            </li>
+            <li>
+                <p>ça vous plaît ? C'est Ramzi qui l'a fait !</p>
+            </li>
+            <li>
+                <p>Contacter <a href="contact.html">Ramzi</a></p>
+            </li>
+        </ul>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
