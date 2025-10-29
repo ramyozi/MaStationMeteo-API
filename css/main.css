@@ -1,433 +1,253 @@
-html{
-  cursor: url("../needs/luffy/Luffy\ Person.cur"), move;
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #3A86FF;
+  --secondary-color: #FFBE0B;
+  --accent-color: #8338EC;
+  --background-color: #f9f9f9;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --footer-bg: #1d3557;
+  --footer-text: #f1faee;
 }
 
-#logoA {
-  width: 370px;
-  margin: auto;
-}
-
-#imgLuffy {
-  width: 65px;
-}
-
-header,
-main,
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-}
-body {
-  color: rgb(0, 0, 2);
-  background: linear-gradient(to bottom, #56b4d3, #2a93c9, #2471a3);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-h1 {
-  text-shadow: #6a6a6a 1px -2px;
-  font-weight: 700;
-  font-size: 50px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #ffffff;
+* {
   margin: 0;
-  display: inline;
-  margin: auto;
-}
-section {
-  text-align: center;
-  background: linear-gradient(to bottom right, #00ffff, #7fffd4, #fffacd);
-  border-color: rgb(0, 0, 0);
-  border-width: 3px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logoandtext img {
-  vertical-align: middle;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-fieldset {
-  padding-top: 10px;
-  width: 80%;
-  margin: auto;
-  border-style: hidden;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-#Personnal-information {
-  vertical-align: 100px;
-  padding-top: 10px;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#Personnal-information {
-  vertical-align: 100px;
-  padding-top: 10px;
+.site-header {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-#validation {
+.site-header .container {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#pcontact {
-  font-family: arial;
-  font-size: 24px;
-  width: auto;
-  height: auto;
-}
-#scontact {
-  border-radius: 10%;
-  width: 85%;
-  height: auto;
-  margin: auto;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--footer-text);
 }
 
-main > p {
-  text-align: center;
-}
-#temperature {
-  grid-row: 1/3;
-  text-align: center;
-  border-radius: 5%;
-  width: 180px;
-  height: 360px;
-}
-#ephemeride {
-  grid-column: 1/2;
-  grid-row: 1;
-  text-align: center;
-  border-radius: 5%;
-  width: 580px;
-}
-table {
-  width: 200px;
-  color: #000000;
-  border-collapse: collapse;
-  text-align: center;
-  width: 100%;
-  height: 150px;
-}
-th,
-td {
-  border: solid 1px rgb(0, 0, 0);
-}
-div {
-  margin-left: 24px;
-}
-
-footer {
-  display: inline;
-  font-size: medium;
-  font-weight: 900;
-  width: 100%;
-  font-family: "Courier New", Courier, monospace;
-  margin: auto;
-  overflow-y: scroll;
-  position: static;
-  color: rgb(255, 255, 255);
-}
-
-footer > #pied_page {
+.site-nav ul {
+  list-style: none;
   display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-}
-form > button{
-  cursor: url("../needs/luffy/Luffy\ Location.cur"), move;
+  gap: 2rem;
 }
 
-a:hover  {
-  
-  color: rgb(12, 10, 7);
-  text-decoration: underline;
-  background-color: rgb(178, 234, 238);
-  padding: 5px;
-  border-radius: 5px;
-  cursor: url("../needs/luffy/Luffy\ Location.cur"), move;
+.site-nav a {
+  color: var(--footer-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
-.circle {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--primary-color);
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: var(--footer-bg);
+}
+
+.ephemeride p,
+.temperature p {
+  margin-bottom: 0.5rem;
+}
+
+/* Temperature circles */
+.temp-values {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.temp-circle {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  font-size: 15px;
-  color: #fff;
-  text-align: center;
-  background: #000;
-}
-
-
-textarea {
-  width: 350px;
-}
-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  width: 100%;
-}
-
-form input,
-form textarea {
-  width: 100%;
-}
-
-/* form input[type="text"],
-form input[type="email"],
-form textarea {
-  width: 70%;
-  margin-right: 0;
-} */
-form label {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 10px;
-  width: 20%;
-}
-form .Entry {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-}
-body {
-  color: rgb(0, 0, 2);
-  background: linear-gradient(to bottom, #56b4d3, #2a93c9, #2471a3);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-h1 {
-  text-shadow: #6a6a6a 1px -2px;
-  font-weight: 700;
-  font-size: 50px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #ffffff;
-  margin: 0;
-  display: inline;
-  vertical-align: middle;
-}
-.logoandtext img {
-  vertical-align: middle;
-}
-main {
-  display: grid;
-  grid-gap: 10px;
-  grid-auto-rows: minmax(150px, auto);
-}
-section {
-  text-align: center;
-  background: linear-gradient(
-    to bottom right,
-    #00ffff,
-    #7fffd4,
-    #fffacd,
-    #ffdab9,
-    #ff7f50,
-    #6495ed
-  );
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-#validation {
-  margin-top: 10px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-}
-#validation button[type="submit"],
-#validation button[type="reset"] {
-  margin-right: 20px;
-}
-input [id="name"] {
-  width: auto;
-}
-#c_objet {
-  width: 100%;
-  max-width: 400px; /* You can adjust the max-width value as needed */
-}
-.input-label {
-  margin-left: 10px;
-  color: #999;
-  font-size: 0.8em;
-}
-
-.firstCol {
-  display: inline-block;
-  margin:auto;
-  padding: 3px 0px;
-  width:auto;
-  min-height: 1px;
-  text-align: right;
-}
-input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.Entry{
-  display: flex;
+  position: relative;
   flex-direction: column;
-  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
 }
 
+.temp-circle span {
+  font-size: 1.5rem;
+}
 
-input {
-  padding: 2px;
+.temp-circle small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+/* Temperature colors */
+.temp-circle.min {
+  background-color: #2EC4B6; /* teal */
+}
+
+.temp-circle.moy {
+  background-color: #FFD166; /* mustard */
+}
+
+.temp-circle.max {
+  background-color: #EF476F; /* pink red */
+}
+
+/* Forecast table */
+.forecast table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.forecast table th,
+.forecast table td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.forecast table thead {
+  background-color: var(--primary-color);
+  color: var(--card-bg);
+}
+
+.forecast table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Contact page */
+.contact-page h1 {
+  margin-bottom: 0.5rem;
+  color: var(--footer-bg);
+}
+
+.contact-page p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.contact-form {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 2px;
-  /* Retire les bordures appliquées par certains navigateurs (Chrome
-  notamment) lors du focus des éléments <input> */
-  outline: none;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
 }
 
-input:focus {
-  border-color: rgba(82, 168, 236, 0.75);
-  box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+.contact-form textarea {
+  resize: vertical;
 }
 
-.ok {
-  border-color: rgba(68, 191, 68, 0.75);
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--card-bg);
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-.ok:focus {
-  border-color: rgba(68, 191, 68, 0.75);
-  box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+.btn-primary:hover {
+  background-color: var(--accent-color);
 }
 
-.nok {
-  border-color: rgba(191, 68, 68, 0.75);
+.site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1rem 0;
+  text-align: center;
 }
 
-.nok:focus {
-  border-color: rgba(191, 68, 68, 0.75);
-  box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
-}
-
-div.isError::after {
-  content: attr(data-error-msg);
-  font-style: italic;
-  font-size: 0.5em;
-  color: red;
-}
-
-/* -------------------------------------- */
-@media screen and (max-width: 9900px) {
-  header,
-  main,
-  footer {
-    font-size: 20px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  main {
-    display: grid;
-    grid-gap: 10px;
-    grid-auto-rows: minmax(150px, auto);
-  }
-  #pcontact {
-    margin-left: 80px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-table {
-  height: 200px;
-}
-#temperature {
-  width: 260px;
-  height: 450px;
-}
 
-#ephemeride {
-  width: 880px;
-}
-table {
-  height: 200px;
-}
-div {
-  margin-left: 57px;
-}
-.circle {
-  width: 65px;
-  height: 65px;
-  line-height: 65px;
-  margin-left: 57px;
-}
-
-/* -------------------------------------- */
-@media screen and (max-width: 1400px) {
-  section {
-    margin-bottom: 10px;
+/* Responsive */
+@media (max-width: 768px) {
+  .site-nav ul {
+    gap: 1rem;
   }
-  #temperature {
-    text-align: center;
-    border-radius: 5%;
-    width: 80%;
+  .temp-values {
+    flex-direction: column;
+    align-items: center;
   }
-
-  #ephemeride {
-    width: 80%;
+  .temp-circle {
+    width: 80px;
+    height: 80px;
   }
-  footer {
-    overflow-y: unset;
-  }
-
-  footer > #pied_page {
-    display: list-item;
-    list-style-type: none;
-    text-align: center;
-  }
-  .circle {
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-
-    margin-left: 20%;
-  }
-}
-@media screen and (max-width: 600px) {
-  main {
-    display: contents;
-  }
-  section {
-    margin-top: 10px;
-  }
-  #temperature {
-    text-align: center;
-    border-radius: 5%;
-    width: 60%;
-    margin: auto;
-    margin-top: 10px;
-  }
-
-  #ephemeride {
-    width: 60%;
-    margin: auto;
-  }
-  footer {
-    overflow-y: unset;
-  }
-
-  footer > #pied_page {
-    display: list-item;
-    list-style-type: none;
-    text-align: center;
-  }
-  .circle {
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-
-    margin: auto;
-  }
-
-
 }
