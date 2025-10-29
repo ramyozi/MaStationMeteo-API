@@ -1,86 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="ramzi">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" href="../needs/sun1.png" type="image/x-icon">
-    <title>Acceil Météo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ma Station Météo</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header id="page_principale">
-        <img id="logoA" src="../needs/titre.svg" alt="soleil_météo">
-    </header>
-    <main>
-        <section id="ephemeride" class="bloc">
-            <h2>&Eacute;phérméride</h2>
-            <p id="date"></p>
-            <p id="heure"></p>
-            <p>Le soleil se lève à <span id="lever"></span></p>
-            <p>Et se couche à <span id="coucher"></span></p>
-            <p> Aujourd'hui nous fêtons le <span id="St"></span></p>
-        </section>
-        <section id="temperature" class="bloc">
-            <h2>Temperature</h2>
-            <figure>
-                <div class="circle nombre" id="min" style="background-color: #44E5C5;">
-                    <p class="temp"></p>
-                </div>
-                <figcaption>Min</figcaption>
-            </figure>
-            <figure>
-                <div class="circle nombre" id="moy" style="background-color: #33DD22;">
-                    <p class="temp"></p>
-                </div>
-                <figcaption>Moy</figcaption>
-            </figure>
-            <figure>
-                <div class="circle nombre" id="max" style="background-color: #E56144;">
-                    <p class="temp"></p>
-                </div>
-                <figcaption>Max</figcaption>
-            </figure>
-
-        </section>
-        <section id="tableau" class="bloc">
-            <table>
-                <tr>
-                    <th id="jour0"></th>
-                    <td><img src="#" alt="img_jour0" id="img_jour0"></td>
-                    <td id="meteo_jour0"></td>
-                </tr>
-                <tr>
-                    <th id="jour1"></th>
-                    <td><img src="#" alt="img_jour1" id="img_jour1"></td>
-                    <td id="meteo_jour1">&Eacute;</td>
-                </tr>
-                <tr>
-                    <th id="jour2"></th>
-                    <td><img src="#" alt="img_jour2" id="img_jour2"></td>
-                    <td id="meteo_jour2"></td>
-                </tr>
-            </table>
-        </section>
-        <br>
-    </main>
-    <footer>
-        <ul id="pied_page">
-            <li>
-                <p>&COPY;Ramzi</p>
-            </li>
-            <li>
-                <p>ça vous plaît ? C'est Ramzi qui l'a fait !</p>
-            </li>
-            <li>
-                <p>Contacter <a href="contact.html">Ramzi</a></p>
-            </li>
-        </ul>
-    </footer>
-    <script src="../js/script.js"></script>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="../needs/sun1.png" alt="Logo météo" />
+        <h1>Ma Station Météo</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="card ephemeride">
+      <h2>Éphéméride</h2>
+      <p>Nous sommes le <span id="date"></span></p>
+      <p>Il est <span id="heure"></span></p>
+      <p>Le soleil se lève à <span id="lever"></span></p>
+      <p>Et se couche à <span id="coucher"></span></p>
+      <p>Aujourd'hui nous fîtons le <span id="St"></span></p>
+    </section>
+    <section class="card temperature">
+      <h2>Température</h2>
+      <div class="temp-values">
+        <div class="temp-circle min">
+          <span id="min"></span>
+          <small>Min</small>
+        </div>
+        <div class="temp-circle moy">
+          <span id="moy"></span>
+          <small>Moy</small>
+        </div>
+        <div class="temp-circle max">
+          <span id="max"></span>
+          <small>Max</small>
+        </div>
+      </div>
+    </section>
+    <section class="card forecast">
+      <h2>Prévisions</h2>
+      <table id="tab_jour">
+        <!-- Les lignes de prévision seront insérées via le script -->
+      </table>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ma Station Météo.</p>
+    </div>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script>
+    // Mise à jour de l'année dans le pied de page
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
